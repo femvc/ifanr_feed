@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>x-alert</title>
+  <script src="hui.js"></script>
+  <script src="hui_control.js"></script>
+  <script src="x-modal.js"></script>
+  <link rel="stylesheet" href="index-1.css">
+  <link rel="stylesheet" href="index-2.css">
+</head>
+<body>
+  
+  
+  <script>
+    // hui.isES6 = function () {return false}
+    // hui.Control.initChildControl(document.body)
+    // cc[1].cc[1].style.display='block'
+    // setTimeout(function () {
+    //   console.log(cc[0])
+    // }, 200)
+    // function doit1(){
+    //   alert(cc[0].getParamMap().username)
+    // }
+    // function doit2(){
+    //   cc[0].setValueByTree({username: "Tom", birthday: "2008-08-20", mobile: "13866669999"})
+    // }
+    // function doit3(){
+    //   cc[1].cc[0].setContent(cc[0].getParamMap().username)
+    //   cc[1].cc[0].getMain().style.display = 'block'
+    // }
+    
+    hui.Modal.create({
+      id: 'courier',
+      formname: 'courier',
+      title: '发私信给 songxianling1992 :',
+      content: '<div style="line-height: 150%;"><div class="form-group"><textarea class="form-control ant-input courier-message" placeholder="仅支持纯文本，不超过 1024 字"></textarea></div></div><div class="modal-footer "><button type="button" class="ant-btn ant-btn-default" onclick="hui.Control.getByFormname(\'message\').close()">取消</button>&nbsp;<button type="button" class="ant-btn ant-btn-primary courier-send">发送</button></div>',
+      width: '400px',
+      height: '200px'
+    })
+    document.querySelector('.courier-send').onclick = function () {
+      
+    }
+  </script>
+</body>
+</html>

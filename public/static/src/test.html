@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <meta http-equiv="Content-Script-Type" content="text/javascript">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <style type="text/css">
+  div#icons {
+    width: 404px;
+  }
+
+  div.wrapper {
+    float: left;
+    width: 100px;
+  }
+
+  div.code {
+    font-size: smaller;
+    overflow: auto;
+  }
+  </style>
+  <!--[if IE]><![endif]-->
+  <title>Identicon Test</title>
+  <script src="identicon.js"></script>
+</head>
+
+<body>
+  <div>
+    <canvas id="static_cv" width="90" height="90"></canvas>
+    3113572969
+  </div>
+  <br>
+  <form name="f">
+    <canvas id="cv" width="90" height="90"></canvas>
+    <input type="text" name="code" value="3113572969">
+    <input type="button" value="draw" onclick="
+  new Identicon('cv', parseInt(document.forms.f.code.value), 90);
+">
+  </form>
+  <br>
+  <div id="icons"></div>
+  <input type="button" value="reload" onclick="draw();">
+  <div style="clear: left"></div>
+  <br>
+  <hr>
+  <a href=".">index</a>
+</body>
+
+</html>

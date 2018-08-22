@@ -20,7 +20,7 @@ app.all('*', function(req, res, next) {
 	next()
 })
 
-app.use(express.static(__dirname + '/public'))
+app.use(express.static(__dirname + '/public', { maxAge: '1s'}))
 
 app.all('/?', function(req, res) {
 	res.send('Hi')

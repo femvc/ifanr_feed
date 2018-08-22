@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+  <title>H Language - Enterprise Template</title>
+  <style>
+  textarea {
+    width: 600px;
+    height: 200px;
+  }
+  </style>
+</head>
+
+<body>
+  <h2>Try</h2>
+  <div class="try-panel">
+    <div class="try-template">
+      <h3>Template</h3>
+<textarea id="text-template">&lt;ul&gt; 
+  {{for: index,vv,cc in it.persons}} 
+  {{index}},{{cc}}
+  &lt;li&gt;{{vv.name}} {{vv.email}}&lt;/li&gt; 
+  {{/for}} 
+&lt;/ul&gt;
+
+&lt;ul&gt; 
+  {{for: key,value of it.maps}} 
+  {{key}},{{value}}
+  &lt;li&gt;{{key}} {{value}}&lt;/li&gt; 
+  {{/for}} 
+&lt;/ul&gt;
+</textarea>
+    </div>
+    <div class="try-data">
+      <h3>Data</h3>
+<textarea id="text-data">{ 
+  persons: [ 
+    { name:"haiyang", email: "haiyang5210@gmail.com" }, 
+    { name:"haiyang2014", email:"wanghaiyang@bilibili.com" } 
+  ],
+  maps: {name: "tom", age: 18}
+}</textarea>
+    </div>
+    <div class="try-result">
+      <h3>Result</h3>
+      <textarea id="text-result" readonly="readonly">Hello Haiyang:D!</textarea>
+    </div>
+    <button onclick="tttt()">tttt</button>
+    <div id="out"></div>
+    <script>
+    function tttt() {
+      var str = document.getElementById('text-template').value
+      var data = document.getElementById('text-data').value
+      var start = new Date()
+      var times = 1
+      for (var i = times + 1; i > 0; i--) {
+        hui.compile(str)(Function('return ' + data)())
+      }
+      var end = new Date()
+      var out = 'loop ' + times + ' times,' + ' use time:' + (end.getTime() - start.getTime())
+      console.log(out)
+      document.getElementById('out').innerHTML = out
+      document.getElementById('text-result').innerHTML = hui.compile(str)(Function('return ' + data)())
+
+    }
+    </script>
+  </div>
+  <script type="text/javascript" src="hui.js"></script>
+</body>
+
+</html>
