@@ -1,0 +1,446 @@
+<html lang="zh-Hans" auto-height="" class="auto-height">
+<head>
+  <meta charset="utf-8" />
+  <meta name="apple-itunes-app" content="app-id=574437211" />
+  <meta name="baidu-tc-cerfication" content="5a5e141ebfc8f0c30d31afbbae563318" />
+  <title> 请介绍两个ECMAScript 2016的新特性 | 爱范儿</title>
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" id="viewport" />
+  <meta name="theme-color" content="#333" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <!-- BEGIN Metadata added by Add-Meta-Tags WordPress plugin -->
+  <meta name="description" content="金秋时节，去一趟芝加哥体验别样的苹果旗舰店和苹果节吧。" />
+  <meta name="keywords" content="ifanr, 爱范儿, 公司, 密歇根苹果店, 芝加哥苹果, 苹果节" />
+  <!-- END Metadata added by Add-Meta-Tags WordPress plugin -->
+  <style type="text/css">
+      img.wp-smiley,
+      img.emoji {
+      display: inline !important;
+      border: none !important;
+      box-shadow: none !important;
+      height: 1em !important;
+      width: 1em !important;
+      margin: 0 .07em !important;
+      vertical-align: -0.1em !important;
+      background: none !important;
+      padding: 0 !important;
+      }
+  </style>
+  <link rel="stylesheet" href="/wp-content/plugins/ifanr-widget-buzz/dist/build/buzz.auto_create_ts_1446046962.css?ver=4.9.2" type="text/css" media="all" id="widgetbuzz-css" />
+  <link rel="stylesheet" href="/static/css/main.mobile.auto_create_ts_1506586273.css" type="text/css" media="" id="main-mobile-app-css" />
+  <style type="text/css">.RC_Expression {width:22px;height:22px;background-image:url(http://res.websdk.rongcloud.cn/css-sprite_bg.png);display:inline-block}
+  </style>
+</head>
+<body class="post-template-default single single-post postid-200000 single-format-standard portrait" style="">
+  <div class="outer-container" id="outer-container">
+    <div class="weixin-share-tip hide general-browser" id="weixin-share-tip">
+      <img class="general" src="/wp-content/themes/ifanr-2.0/static/images/mobile/weixin-share-tip.png" alt="" />
+      <img class="appso" src="/wp-content/themes/ifanr-2.0/static/images/mobile/appso-weixin-sharetip.png" alt="" />
+      <div class="js-wxqrcode qrcode"></div>
+      <p>请通过微信扫码分享，或通过浏览器自带分享功能分享文章到微信。</p>
+    </div>
+    <div class="fake global-nav-overlay-container hide" id="fake-global-nav-overlay"></div>
+    <div class="global-nav-overlay-container hide js-close-nav" id="global-nav-overlay"></div>
+    <div data-cmpt-navigator="" class="global-navigator">
+      <div class="nav-title">
+        <a class="nav-logo" href="http://www.ifanr.com">
+          <img src="/wp-content/themes/ifanr-2.0/static/images/mobile/new-logo.png" alt="" /></a>
+        <span class="js-search-button search-button nav-icon"><i class="ifanr2015 ifanr2015-search"></i></span>
+        <div class="nav-user" id="nav-user">
+          <!-- 已登录 -->
+          <div class="js-login hide"><a href="https://sso.ifanr.com/myactivity/" target="_blank">
+              <img class="user-avatar js-user-avatar" src="" alt="" /></a></div>
+          <!-- 未登录 -->
+          <div class="js-not-login"><a rel="nofollow" class="user-login" href="https://sso.ifanr.com/login/?next=http://www.ifanr.com" id="sso-login">登录</a><a rel="nofollow" class="user-reg" href="https://sso.ifanr.com/register/?next=http://www.ifanr.com" id="sso-register">注册</a></div>
+        </div>
+        <!-- .nav-user -->
+      </div>
+      <div class="nav-container">
+        <div class="nav-items-list" itemscope="" itemtype="http://schema.org/SiteNavigationElement">
+          <div class="single-row"><a itemprop="url" href="http://www.ifanr.com/category/ces2018"><span itemprop="name">CES 2018</span></a><a itemprop="url" href="http://www.ifanr.com/category/ifanq"><span itemprop="name">ifanQ</span></a><a itemprop="url" href="http://www.ifanr.com/category/top-rank"><span itemprop="name">ifanRank</span></a></div>
+          <div class="single-row"><a itemprop="url" href="http://www.ifanr.com/category/mindtalk"><span itemprop="name">MindTalk</span></a><a itemprop="url" href="http://www.ifanr.com/category/mwc-2018"><span itemprop="name">MWC 2018</span></a><a itemprop="url" href="http://www.ifanr.com/category/product"><span itemprop="name">产品</span></a></div>
+          <div class="single-row"><a itemprop="url" href="http://www.ifanr.com/category/people"><span itemprop="name">人物</span></a><a itemprop="url" href="http://www.ifanr.com/category/business"><span itemprop="name">公司</span></a><a itemprop="url" href="http://www.ifanr.com/category/%e5%9b%be%e8%ae%b0"><span itemprop="name">图记</span></a></div>
+          <div class="single-row"><a itemprop="url" href="http://www.ifanr.com/category/%e5%b9%bf%e5%91%8a"><span itemprop="name">广告</span></a><a itemprop="url" href="http://www.ifanr.com/category/innovation"><span itemprop="name">新创</span></a><a itemprop="url" href="http://www.ifanr.com/category/ifanrnews"><span itemprop="name">早报</span></a></div>
+          <div class="single-row"><a itemprop="url" href="http://www.ifanr.com/category/game-special"><span itemprop="name">游戏</span></a><a itemprop="url" href="http://www.ifanr.com/category/special"><span itemprop="name">特稿</span></a><a itemprop="url" href="http://www.ifanr.com/category/life"><span itemprop="name">生活</span></a></div>
+          <div class="single-row"><a itemprop="url" href="http://www.ifanr.com/category/%e8%8c%83%e8%af%84"><span itemprop="name">范评</span></a><a itemprop="url" href="http://www.ifanr.com/category/intelligentcar"><span itemprop="name">董车会</span></a><a itemprop="url" href="http://www.ifanr.com/video"><span itemprop="name">视频</span></a></div>
+          <div class="single-row"><a itemprop="url" href="http://www.ifanr.com/category/review"><span itemprop="name">评测</span></a></div>
+        </div>
+        <div class="nav-products" itemscope="" itemtype="http://schema.org/Product"><a itemprop="url" class="product-item" href="http://www.ifanr.com/app/">
+            <img itemprop="logo" class="item-logo" src="/wp-content/themes/ifanr-2.0/static/images/common/apps/appsolution.png" alt="" /><span itemprop="name" class="item-name">AppSolution</span></a><a itemprop="url" class="product-item" href="http://www.ifanr.com/coolbuy/">
+            <img itemscope="logo" class="item-logo" src="/wp-content/themes/ifanr-2.0/static/images/common/apps/coolbuy.png" alt="" /><span itemprop="name" class="item-name">玩物志</span></a><a itemprop="url" class="product-item" href="http://mindstore.io/" target="_blank">
+            <img itemscope="logo" class="item-logo" src="/wp-content/themes/ifanr-2.0/static/images/common/apps/mindstore-new.png" alt="" /><span itemscope="name" class="item-name">MindStore</span></a></div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+    <div class="container" id="container">
+      <div class="contents-wrapper" id="contents-wrapper">
+        <div id="header-nav">
+          <div class=" simple header js-navigator clearfix" id="simple-header"><span ga-track="event" ga-action="menu" ga-event-category="button" class="menu-button nav-icon js-tblcontents"><i class="ifanr2015 ifanr2015-menu"></i></span></div>
+        </div>
+        <div class="page-content" id="page-content">
+          <div class="weixin-app-download-mask hide" id="weixin-app-download-mask"></div>
+          <!-- 文章详情页面的白色透明遮罩 -->
+          <div class="share-overlay hide" id="share-overlay"></div>
+          <!-- 文章详情页面的黑色透明遮罩 -->
+          <div class="login-overlay hide" id="login-overlay"></div>
+          <div class="content clearfix" id="content">
+            <div>
+              <div class="main main-singular clearfix" data-post-id="200000" data-post-tag="密歇根苹果店" data-next-post="http://www.ifanr.com/200001.html">
+                <!--begin entry-->
+                <style>
+                    .entry-content iframe {
+                    max-width: 100%;
+                    height: auto;
+                    min-height: 240px;
+                    max-height: 320px;
+                    }
+                </style>
+                <article cmpt-article-contents="" data-post-id="200000" data-link="http://www.ifanr.com/200000" class="js-main-singular clearfix" id="post-200000">
+                  <div class="entry-header">
+                    <div class="header-picture">
+                      <img class="js-head-picture aligncenter" src="/static/img/es5.jpg" alt="" /></div>
+                  </div>
+                  <div class="entry-meta"><span class="category"><a href="http://www.ifanr.com/category/business">ES6</a><span class="seperator">|</span></span> <span class="author js-post-author-name"><a href="http://www.ifanr.com/author/yaoying" title="由Nicholas C. Zakas发布" rel="author">Nicholas C. Zakas</a><span class="seperator">|</span></span> <span class="date">2017年10月31日 23:59</span></div>
+                  <a class="entry-comment-number" data-jump-to="" href="#post-200000-comments-box"><i class="ifanr2015 ifanr2015-pinglun"></i><span class="number js-comments-count">2</span></a>
+                  <div class="article-header">
+                    <h1 class="entry-name yahei"> 请介绍两个ECMAScript 2016的新特性 </h1>
+                  </div>
+                  <div class="entry-content clearfix" id="entry-content">
+                    <p>如题，请介绍两个ECMAScript 2016的新特性</p>
+                    <p class="picture-full-width123">
+                      <img class="aligncenter size-full wp-image-932164" src="/static/img/es7.png" alt="" width="1100" height="752" /></p>
+                  </div>
+                  <div class="article-jiong-banner"></div>
+                  <div popup="ifanr" class="popup popup-app-download" style="">
+                    <img src="/wp-content/themes/ifanr-2.0/static//images/common/ifanr-app.png" alt="" class="popup-app-icon" />
+                    <div class="popup-app-logo">
+                      <h1 class="popup-app-name">爱范儿 App</h1>
+                      <p class="popup-app-desc">下载新版客户端，获取最新资讯</p>
+                    </div>
+                    <span class="js-close popup-app-close"><i class="ifanr2015 ifanr2015-guanbi"></i></span>
+                    <a href="https://itunes.apple.com/app/id574437211?mt=811" data-android="https://ifanrdownload.b0.upaiyun.com/app/apk/ifanr_official.apk" data-weixin="http://a.app.qq.com/o/simple.jsp?pkgname=com.ifanr.activitys" class="js-download-link popup-app-button" target="_blank">下载 App</a>
+                  </div>
+                  <div popup="appso" class="popup popup-app-download" style="">
+                    <img src="/wp-content/themes/ifanr-2.0/static//images/common/appso-app2.png" alt="" class="popup-app-icon" />
+                    <div class="popup-app-logo">
+                      <h1 class="popup-app-name">AppSo</h1>
+                      <p class="popup-app-desc">有了它，你的 iPhone 才是 iPhone</p>
+                    </div>
+                    <span class="js-close popup-app-close"><i class="ifanr2015 ifanr2015-guanbi"></i></span>
+                    <a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.ifanr.appso" data-weixin="http://app.so/app/download/369/" class="js-download-link popup-app-button appso-download-button" target="_blank">下载 App</a>
+                  </div>
+                  <div popup="appso-android" class="popup popup-app-download" style="">
+                    <img src="/wp-content/themes/ifanr-2.0/static//images/common/appso-app2.png" alt="" class="popup-app-icon" />
+                    <div class="popup-app-logo">
+                      <h1 class="popup-app-name">AppSo</h1>
+                      <p class="popup-app-desc">让智能手机更好用的秘密</p>
+                    </div>
+                    <span class="js-close popup-app-close"><i class="ifanr2015 ifanr2015-guanbi"></i></span>
+                    <a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.ifanr.appso" data-weixin="http://app.so/app/download/369/" class="js-download-link popup-app-button appso-download-button" target="_blank">下载 App</a>
+                  </div>
+                </article>
+                <div class="article-footer">
+                  <!-- likes contents -->
+                  <div class="article-likes-persons js-200000-likes-list">
+                    <div class="persons-wrapper">
+                      <span class="counter"><span class="js-like-hint">0</span> 赞</span>
+                      <div class="person-avatars-list js-person-avatars-list">
+                        <div class="avatar-item">
+                          <img src="/user_files/uploaded/af/0d/af0dd8f8906c4e66c2bc8bdfc0be472029348ed1-c4868547a0df14fa68cfec309cad4d921e0b5611.png" /></div>
+                        <div class="avatar-item">
+                          <img src="/tavatar/fe/fc/fefcf0a5d4cdd55f8f87c2db19a0400e117b08f0.jpg" /></div>
+                        <div class="avatar-item">
+                          <img src="/tavatar/14/ee/14ee4b55f472b5903c8018636c5e198bcc29d011.jpg" /></div>
+                        <div class="avatar-item">
+                          <img src="/tavatar/20/bb/20bb2d467ccb0f6e252b86b2eb8f45fa684acce4.jpg" /></div>
+                        <div class="avatar-item">
+                          <img src="/tavatar/dd/25/dd2554bcaf05bf7a8acce0e20c5e6c506517a860.jpg" /></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- end likes contents -->
+                  <!-- You can start editing here. -->
+                  <div class="comments-box" id="post-200000-comments-box">
+                    <!-- TODO: 由 CSS 控制 normal-counter-container 和 hot-headline 是否显示 -->
+                    <!-- span.with-normal-comments -->
+                    <span class="counter js-counter with-hot-comments with-hot-list"><span class="normal-counter-container"><span class="js-normal-counter">0</span><span>条评论</span></span><span class="hot-headline">热门评论</span></span>
+                    <div class="hot-comments-list" data-cmpt-hot-comments="" data-post-id="200000">
+                      <div class="js-comments-list-container" id="J_commentlist">
+                        <div class="js-comments-loading loading" style="display: none;" id="JS_loading">
+                          <img height="6" src="/static/img/loadingb.gif" /></div>
+                        <ol class="commentlist comments-list js-comments-list">
+                          <li class="comment js-comment-1189035" data-id="1189035" id="comment-1189035">
+                            <div class="comment-content clearfix">
+                              <div class="comment-top clearfix">
+                                <div class="comment-avatar vcard"><a data-jump-to="">
+                                    <img alt="" src="/tavatar/e6/1c/e61c51d6487acec78a78a07f4586a33304170255.jpg" class="avatar photo" /></a></div>
+                                <div class="comment-author">61陆毅</div>
+                                <div class="comment-rating-zone"><a class="J_rating js-rating comment-rating rating-up" data-id="1189035" data-action="add" data-post-id="200000" href="javascript:void(0);" id="up-1189035"><i class="ifanr2015 ifanr2015-up"></i><i class="ifanr2015 ifanr2015-dagou"></i><span id="karma-1189035-up">7</span></a><a class="J_rating js-rating comment-rating rating-down" data-id="1189035" data-action="subtract" data-post-id="200000" href="javascript:void(0);" id="down-1189035"><i class="ifanr2015 ifanr2015-down"></i><i class="ifanr2015 ifanr2015-dagou"></i><span id="karma-1189035-down">1</span></a></div>
+                              </div>
+                              <div class="js-comment-body-1189035 comment-body">
+                                <p>指数运算符<br/>
+                                数学运算如加法和减法分别有 + 和 - 等运算符。与他们类似，** 运算符通常用于指数运算。在ECMAScript 2016中，引入了 ** 而不是Math.pow。<br/>
+                                <br/>
+                                // 不使用<br/>
+                                Math.pow(7,2) //49<br/>
+                                //使用<br/>
+                                7**2 //49</p>
+                              </div>
+                              <div class="comment-meta commentmetadata clearfix">
+                                <div class="comment-date"> 2017-10-31 </div>
+                                <a class="reply comment-reply-link J_ReplyCmt js-reply-comment" href="javascript:void(0);" data-postid="200000" data-parentid="1189035" data-id="1189035">回复</a>
+                              </div>
+                            </div>
+                          </li>
+                          <li class="comment js-comment-1189142" data-id="1189142" id="comment-1189142">
+                            <div class="comment-content clearfix">
+                              <div class="comment-top clearfix">
+                                <div class="comment-avatar vcard"><a data-jump-to="">
+                                    <img alt="" src="/tavatar/cf/83/cf83e563ce2cafbe40d1c5af3533d939a180d1c2.jpg" class="avatar photo" /></a></div>
+                                <div class="comment-author">kin-法克-爆-码表</div>
+                                <div class="comment-rating-zone"><a class="J_rating js-rating comment-rating rating-up" data-id="1189142" data-action="add" data-post-id="200000" href="javascript:void(0);" id="up-1189142"><i class="ifanr2015 ifanr2015-up"></i><i class="ifanr2015 ifanr2015-dagou"></i><span id="karma-1189142-up">1</span></a><a class="J_rating js-rating comment-rating rating-down" data-id="1189142" data-action="subtract" data-post-id="200000" href="javascript:void(0);" id="down-1189142"><i class="ifanr2015 ifanr2015-down"></i><i class="ifanr2015 ifanr2015-dagou"></i><span id="karma-1189142-down">0</span></a></div>
+                              </div>
+                              <div class="js-comment-body-1189142 comment-body">
+                                <p>Array.prototype.includes
+                                includes是数组上的简单实例方法，并有助于轻松查找某个项是否在Array中（包括NaN不像indexOf）<br/>
+                                <br/>
+                                const arr = [ 1, 2, 3, 4, NaN];<br/>
+                                // es2016不使用<br/>
+                                if(arr.indexOf(3) >= 0){<br/>
+                                  console.log(true);<br/>
+                                }<br/>
+                                //使用<br/>
+                                if(arr.includes(3)){<br/>
+                                  console.log(true);<br/>
+                                }<br/>
+                                //ps: 注意 indexOf 是不支持查找NaN的<br/>
+                                arr.includes(NaN) // true<br/>
+                                arr.indexOf(NaN) // -1 (indexOf 不支持 NaN) <br/>
+                                (注:想要命名的JavaScript规范contains，但这显然已被Mootools使用，因此他们使用了includes。)</p>
+                              </div>
+                              <div class="comment-meta commentmetadata clearfix">
+                                <div class="comment-date"> 2017-11-1 </div>
+                                <a class="reply comment-reply-link J_ReplyCmt js-reply-comment" href="javascript:void(0);" data-postid="200000" data-parentid="1189142" data-id="1189142">回复</a>
+                              </div>
+                            </div>
+                          </li>
+                        </ol>
+                      </div>
+                      <div class="js-comment-post-zone" data-post-id="200000"></div>
+                      <!-- HOT COMMENTS RESPOND FORM -->
+                      <div data-cmpt-respond-form="" data-post-id="200000" class="respond" id="respond">
+                        <p class="js-comment-title comment-title">参与评论</p>
+                        <span class="js-reply-title reply-title">回复</span>
+                        <div class="js-cancel-comment-reply cancel-comment-reply hide"><a rel="nofollow" href="javascript:void(0);" class="js-cancel-button reverse-icon" id="cancel-comment-reply-link"><i class="ifanr2015 ifanr2015-guanbi"></i></a></div>
+                        <div class="js-login hide" id="J_LoggedIn">
+                          <div class="logged-in-as">
+                            <div class="avatar-item">
+                              <img class="js-user-avatar" src="" alt="" /></div>
+                            <span class="J_UserIdentity"></span>
+                          </div>
+                        </div>
+                        <form class="js-respond-form" id="commentform">
+                          <div class="js-not-login">
+                            <div class="login-box">
+                              <p>聊的这么热闹，怎么能少得了我  ╮(╯_╰)╭</p>
+                              <p>登录 或 注册</p>
+                              <br/>
+                            </div>
+                          </div>
+                          <div class="js-login hide" id="J_LoggedIn">
+                            <p>
+                              <textarea name="comment" class="js-comment-content" cols="58" rows="10" tabindex="13" placeholder="你有什么看法呢？" id="comment"></textarea></p>
+                          </div>
+                          <div class="js-comment-processing hide" id="ajax-cmt-loading">
+                            <img src="/wp-content/themes/ifanr-2.0/static/images/common/loader/ajax-loader-light.gif" style="vertical-align:middle; margin: 5px 0;" /> 正在提交, 请稍候... </div>
+                          <div class="js-error-msg hide" id="error">#</div>
+                          <p class="form-submit js-login hide">
+                            <input name="submit" type="submit" value="发布" class="button js-comment-submit" tabindex="14" id="submit" /></p>
+                          <input type="hidden" name="comment_post_ID" value="200000" id="comment_post_ID" />
+                          <input type="hidden" name="comment_parent" value="0" id="comment_parent" />
+                          <p class="comment_mail_notify js-comment-mail-notify js-login hide">
+                            <input type="checkbox" class="js-comment-mail-notifier" name="comment_mail_notify" value="comment_mail_notify" checked="checked" /><span class="comment-mail-notify-check comment-mail-notify-checked js-notify-checked"></span><span class="hide comment-mail-notify-check comment-mail-notify-unchecked js-notify-unchecked"></span><label class="js-notify-btn">回复邮件通知</label></p>
+                        </form>
+                      </div>
+                      <!-- END HOT COMMENTS RESPOND -->
+                    </div>
+                  </div>
+                  <!-- #comments -->
+                </div>
+                <div data-cmpt-recommend-articles="" data-post-id="200000" class="recommend-article" style="display: block;">
+                  <div class="title"><span class="ifanr2015 ifanr2015-pinglun01"></span>相关文章</div>
+                  <div class="js-recommend-list">
+                    <div class="main-body">
+                      <div class="image" style="background-image: url(/wp-content/uploads/2015/09/Raindrop-io-Feature.jpg!320);"></div>
+                      <div class="article">
+                        <h3 class="article-title">你不知道的ES7新特性</h3>
+                        <div class="article-footer">Astrian<span>|</span>2015-9-26</div>
+                      </div>
+                      <a ga-track="event" ga-action="RelatedArticle" ga-event-category="Domain" href="http://www.ifanr.com/559737" class="article-link"></a>
+                    </div>
+                    <div class="main-body">
+                      <div class="image" style="background-image: url(/wp-content/uploads/2013/11/Screenshot-2013-11-14-13.26.33.png!320);"></div>
+                      <div class="article">
+                        <h3 class="article-title">ES8标准制订最新进展</h3>
+                        <div class="article-footer">王崇旭<span>|</span>2013-11-14</div>
+                      </div>
+                      <a ga-track="event" ga-action="RelatedArticle" ga-event-category="Domain" href="http://www.ifanr.com/373202" class="article-link"></a>
+                    </div>
+                    <div class="main-body">
+                      <div class="image" style="background-image: url(/wp-content/uploads/2017/06/iphone6nfc.jpg!320);"></div>
+                      <div class="article">
+                        <h3 class="article-title">ES7必知必会的两个新特性</h3>
+                        <div class="article-footer">刘莎<span>|</span>2017-6-7</div>
+                      </div>
+                      <a ga-track="event" ga-action="RelatedArticle" ga-event-category="Domain" href="http://www.ifanr.com/849333" class="article-link"></a>
+                    </div>
+                    <div class="main-body">
+                      <div class="image" style="background-image: url(/wp-content/uploads/2017/10/0.jpg!320);"></div>
+                      <div class="article">
+                        <h3 class="article-title">ES7面试中常问的问题</h3>
+                        <div class="article-footer">梁, 爽<span>|</span>2017-10-13</div>
+                      </div>
+                      <a ga-track="event" ga-action="RelatedArticle" ga-event-category="Domain" href="http://www.ifanr.com/minapp/921338" class="article-link"></a>
+                    </div>
+                  </div>
+                  <div class="next-post-loading js-next-loading">
+                    <img height="6" src="/static/img/loadingb.gif" /></div>
+                </div>
+                <!-- .main -->
+              </div>
+            </div>
+            <!-- #content -->
+          </div>
+          <!--end page-content-->
+        </div>
+        <!-- #contents-wrapper -->
+      </div>
+      <!-- #container -->
+    </div>
+    <!-- #outer-container -->
+    <!-- t:0.22226, h:'2018-02-27T17:13:54+08:00 28800', H:'ip-172-31-2-190' -->
+    <!--
+            Whitelist mode: 
+            Remote address: 222.73.196.18
+            Request REQUEST_URI: /200000
+            Rebuilt REQUEST_URI: /200000
+            Rebuilt QUERY_STRING: 
+            
+            Cacheable: 1
+            Cache key: a08af7c37edf7bdc9738b05fc8d3df1347f82dc2
+            Cache namespace: db99e7e417a46a9fb399eb0741008a64b67b0ae3
+            Cache hit: 1
+            Cache hits: 4
+            Cache mtime: 1519722834.5223
+            Cache age: 99.015532970428
+            
+            Memory usage: 2 MiB
+            Peak memory usage: 2 MiB
+            -->
+    <!-- t:0.00527, h:'2018-02-27T17:15:33+08:00 28800', H:'ip-172-31-2-190' -->
+    <div class="ifr-search-zone" id="ifr-search-zone">
+      <div class="ifr-search-zone-container">
+        <div class="close-zone"><span id="ifr-cancel-search"><i class="ifanr2015 ifanr2015-guanbi"></i></span></div>
+        <div class="query-zone"><i class="ifanr2015 ifanr2015-search"></i>
+          <input type="text" id="ifr-query-search" /></div>
+        <div class="loading" id="loading"></div>
+        <div class="search-ifr" style="height: 627px;">
+          <ul class="search-list" id="search-list"></ul>
+          <div class="load-more hide" id="search-load-more"><button id="next-page">加载更多</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/static/src/hui.js"></script>
+  <script>
+    var navmenu = document.querySelector('.global-navigator')
+    var overlay = document.querySelector('#global-nav-overlay')
+    var menubtn = document.querySelector('.menu-button')
+    // 注：显示导航菜单
+    menubtn.onclick = function () {
+      hui.removeClass(navmenu, 'slide-out-down', 'slide-in-down')
+      hui.removeClass(overlay, 'hide', 'state-open')
+    }
+    // 注：隐藏导航菜单
+    overlay.onclick = function () {
+      hui.removeClass(navmenu, 'slide-in-down', 'slide-out-down')
+      hui.removeClass(overlay, 'state-open', 'hide')
+    }
+    // 注：显示全部评论
+    hui.delegate(document.documentElement, 'click', '.btn-normal-comments', function () {
+      hui.removeClass('#simple-header', '', 'hide')
+      hui.addClass('.normal-comments-list', 'hide')
+    })
+    // 注：隐藏全部评论
+    hui.delegate(document.documentElement, 'click', '.btn-close', function () {
+      hui.addClass('#simple-header', 'hide')
+      hui.removeClass('.normal-comments-list', '', 'hide')
+    })
+
+    var nextLoading = false
+    function loadNextTopic () {
+      nextLoading = true
+      console.log('loading next topic ...')
+      hui.xhr({
+        url: '/200001.html',
+        responseType: 'text/html',
+        success: function (res) {
+          hui.addClass('.next-post-loading', 'hide')
+
+          var frag = document.createElement('DIV')
+          frag.innerHTML = res
+          var container = document.querySelector('#content')
+          container.appendChild(frag)
+          
+          nextLoading = false
+        },
+        error: function () {
+          nextLoading = false
+        }
+      })
+    }
+
+    window.onscroll = function () {
+      if (nextLoading) return;
+      //文档高度
+      var scrollTop = 0, bodyScrollTop = 0, documentScrollTop = 0
+      if (document.body) {
+        bodyScrollTop = document.body.scrollTop
+      }
+      if (document.documentElement) {
+        documentScrollTop = document.documentElement.scrollTop
+      }
+      scrollTop = (bodyScrollTop - documentScrollTop > 0) ? bodyScrollTop : documentScrollTop
+
+      //可视窗口高度
+      var windowHeight = 0
+      if (document.compatMode == 'CSS1Compat') {
+        windowHeight = document.documentElement.clientHeight
+      } else {
+        windowHeight = document.body.clientHeight
+      }
+
+      //滚动条滚动高度
+      var scrollHeight = 0, bodyScrollHeight = 0, documentScrollHeight = 0
+      if (document.body) {
+        bodyScrollHeight = document.body.scrollHeight
+      }
+      if (document.documentElement) {
+        documentScrollHeight = document.documentElement.scrollHeight
+      }
+      scrollHeight = (bodyScrollHeight - documentScrollHeight > 0) ? bodyScrollHeight : documentScrollHeight
+
+      //监听事件内容
+      if(scrollTop + windowHeight >= scrollHeight - 200){
+        //当滚动条到底时,这里是触发内容
+        //异步请求数据,局部刷新dom
+        // ajax_function()
+        // alert('bottom')
+        loadNextTopic()
+      }
+    }
+  </script>
+</body>
+</html>
